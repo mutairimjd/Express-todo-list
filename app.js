@@ -6,13 +6,30 @@ const app = express();
 // Parse incoming requests data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// get all todos
+// Get all todos
 app.get('/api/v1/todos', (req, res) => {
     res.status(200).send({
         success: 'true',
         message: 'todos retrieved successfully',
         todos: db
     })
+});
+// Get A Single Todo
+app.get('/api/v1/todos/:id', (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    db.map((todo) => {
+        if (todo.id === id) {
+            return res.status(200).send({
+                success: 'true',
+                message: 'todo retrieved successfully',
+                todo,
+            });
+        }
+    });
+    return res.status(404).send({
+        success: 'false',
+        message: 'todo does not exist',
+    });
 });
 // Create Todo
 app.post('/api/v1/todos', (req, res) => {
