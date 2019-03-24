@@ -1,4 +1,4 @@
-# hw-week_10-day_01-todo-list
+# todo-list
 
 ## Build A RESTful Api With Node.js And Express.Js
 
