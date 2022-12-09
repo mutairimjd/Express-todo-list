@@ -21,7 +21,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mixin-deep": ">=1.3.2",
     "set-value": ">=2.0.1",
     "lodash": ">=4.17.13",
